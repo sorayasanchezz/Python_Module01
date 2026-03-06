@@ -10,36 +10,41 @@ class Flower(Plant):
         super().__init__(name, height, age)
         self.color = color
 
-    def bloom(self):
+    def bloom(self) -> None:
         print(f"{self.name} is blooming beautifully!")
 
-    def print_info(self):
-        print(f"{self.name} (Flower): {self.height}cm, {self.age} days, {self.color} color")
+    def print_info(self) -> None:
+        print(f"{self.name} (Flower): {self.height}cm, "
+              f"{self.age} days, {self.color} color")
 
 
 class Tree(Plant):
-    def __init__(self, name: str, height: int, age: int, diameter: int) -> None:
+    def __init__(self, name: str, height: int,
+                 age: int, diameter: int) -> None:
         super().__init__(name, height, age)
         self.diameter = diameter
 
-    def print_info(self):
-        print(f"{self.name} (Tree): {self.height}cm, {self.age} days, {self.diameter}cm diameter")
+    def print_info(self) -> None:
+        print(f"{self.name} (Tree): {self.height}cm, "
+              f"{self.age} days, {self.diameter}cm diameter")
 
-    def produce_shade(self):
+    def produce_shade(self) -> None:
         shade = (self.height * self.diameter) // 320
         print(f"{self.name} provides {shade} square meters of shade")
 
 
 class Vegetable(Plant):
-    def __init__(self, name, height, age,  season, nut_value):
+    def __init__(self, name: str, height: int, age: int,
+                 season: str, nut_value: str) -> None:
         super().__init__(name, height, age)
         self.season = season
         self.nut_value = nut_value
 
-    def print_info(self):
-        print(f"{self.name} (Vegetable): {self.height}cm, {self.age} days, {self.season}")
+    def print_info(self) -> None:
+        print(f"{self.name} (Vegetable): {self.height}cm,"
+              f"{self.age} days, {self.season}")
 
-    def nutritional_value(self):
+    def nutritional_value(self) -> None:
         print(f"{self.name} is rich in {self.nut_value}")
 
 
@@ -75,4 +80,3 @@ if __name__ == "__main__":
     carrot = Vegetable("Carrot", 30, 70, "autumn harvest", "vitamin A")
     carrot.print_info()
     carrot.nutritional_value()
-    print()

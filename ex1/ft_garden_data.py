@@ -1,16 +1,3 @@
-#!/usr/bin/env python3
-# ########################################################################### #
-#                                                                             #
-#                                                          :::      ::::::::  #
-#   ft_garden_data.py                                    :+:      :+:    :+:  #
-#                                                      +:+ +:+         +:+    #
-#   By: soraya <soraya@student.42.fr>                +#+  +:+       +#+       #
-#                                                  +#+#+#+#+#+   +#+          #
-#   Created: 2026/02/16 16:32:52 by soraya              #+#    #+#            #
-#   Updated: 2026/02/23 18:43:25 by soraya             ###   ########.fr      #
-#                                                                             #
-# ########################################################################### #
-
 class Plant:
     """Molde de planta, con nombre, altura y edad"""
     def __init__(self, name: str, height: int, age: int) -> None:
@@ -22,7 +9,7 @@ class Plant:
         print(f"{self.name}: {self.height}cm, {self.age} days old")
 
 
-def ft_garden_data():
+def ft_garden_data() -> None:
     """Función que crea plantas y las muestra con sus características"""
     print("=== Garden Plant Registry ===")
 

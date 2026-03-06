@@ -1,39 +1,26 @@
-#!/usr/bin/env python3
-# ########################################################################### #
-#                                                                             #
-#                                                          :::      ::::::::  #
-#   ft_plant_growth.py                                   :+:      :+:    :+:  #
-#                                                      +:+ +:+         +:+    #
-#   By: soraya <soraya@student.42.fr>                +#+  +:+       +#+       #
-#                                                  +#+#+#+#+#+   +#+          #
-#   Created: 2026/02/23 18:43:20 by soraya              #+#    #+#            #
-#   Updated: 2026/02/23 18:43:21 by soraya             ###   ########.fr      #
-#                                                                             #
-# ########################################################################### #
-
 class Plant:
 
     """
     Growth: how many cm does it grow per day
     """
 
-    def __init__(self, name, height, age, growth):
+    def __init__(self, name: str, height: int, age: int, growth: int) -> None:
         self.name = name
         self.height = height
         self.age = age
         self.growth = growth
 
-    def grow(self):
+    def grow(self) -> None:
         self.height += self.growth
 
-    def age_up(self):
+    def age_up(self) -> None:
         self.age += 1
 
-    def get_info(self):
+    def get_info(self) -> str:
         return f"{self.name}: {self.height}cm, {self.age} days old"
 
 
-def one_day(plants):
+def one_day(plants: list[Plant]) -> int:
     cm_day = 0
     for plant in plants:
         plant.age_up()

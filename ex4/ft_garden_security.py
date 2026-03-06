@@ -1,16 +1,3 @@
-#!/usr/bin/env python3
-# ########################################################################### #
-#                                                                             #
-#                                                          :::      ::::::::  #
-#   ft_garden_security.py                                :+:      :+:    :+:  #
-#                                                      +:+ +:+         +:+    #
-#   By: soraya <soraya@student.42.fr>                +#+  +:+       +#+       #
-#                                                  +#+#+#+#+#+   +#+          #
-#   Created: 2026/02/23 18:43:04 by soraya              #+#    #+#            #
-#   Updated: 2026/02/25 16:37:59 by soraya             ###   ########.fr      #
-#                                                                             #
-# ########################################################################### #
-
 class SecurePlant:
     def __init__(self, name: str) -> None:
         self.name = name
@@ -18,15 +5,16 @@ class SecurePlant:
         self._age = 0
         print(f"Plant created: {self.name}")
 
-    def get_heigth(self):
+    def get_heigth(self) -> None:
         print(f"{self._heigth}")
 
-    def get_age(self):
+    def get_age(self) -> None:
         print(f"{self._age}")
 
     def set_height(self, new_height: int) -> None:
         if new_height < 0:
-            print(f"Invalid operation attempted: height {new_height}cm [REJECTED]")
+            print("Invalid operation attempted:"
+                  f"height {new_height}cm [REJECTED]")
             print("Security: Negative height rejected")
             return
         self._height = new_height
@@ -34,14 +22,16 @@ class SecurePlant:
 
     def set_age(self, new_age: int) -> None:
         if new_age < 0:
-            print(f"Invalid operation attempted: age {new_age} days [REJECTED]")
+            print("Invalid operation attempted:"
+                  f"age {new_age} days [REJECTED]")
             print("Security: Negative age rejected")
             return
         self._age = new_age
         print(f"Age updated: {self._age} days [OK]")
 
-    def describe(self):
-        print(f"Current plant: {self.name} ({self._height}cm, {self._age} days)")
+    def describe(self) -> None:
+        print(f"Current plant: {self.name} "
+              f"({self._height}cm, {self._age} days)")
 
 
 if __name__ == "__main__":
